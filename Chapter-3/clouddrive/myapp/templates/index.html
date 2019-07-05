@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cloud Drive</title>
+<link href="/static/styles/demo_style.css" rel="stylesheet" type="text/css">
+<link href="/static/styles/bootstrap.css" rel="stylesheet" type="text/css">
+
+</head><body>
+
+<div class="demoHead">   
+  <div>
+    <div style="float:left;">
+      <h1>Cloud Drive</h1>
+      <h2>a cloud-based app for document storage</h2>
+    </div>
+  
+    <div style="clear:both;"></div>
+  </div>
+
+ 
+
+</div>
+<center>
+<br>
+Logged in as {{username}}
+<br><br>
+Used {{totalsize}} MB ({{percentused}}%) of {{limit}} MB
+<br><br>
+<table border='1' bordercolor='#cccccc'>
+<tr>
+<td width="500"><h5>File</h5></td>
+<td width="200"><h5>Last Modified</h5></td>
+<td width="100"><h5>Size</h5></td>
+<td width="200"><h5>Actions</h5></td>
+</tr>
+
+{% for key,val in userfiles.items %}
+<tr>
+<td width="500">{{key}}</td>
+<td width="200">{{val.0}}</td>
+<td width="200">{{val.1}} KB</td>
+<td width="200"><a href="http://abahga2013.s3.amazonaws.com/{{username}}/media/{{key}}">Download</a> | <a href="/delete/{{key}}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+<br><br>
+<a href='/'>Home</a>| 
+<a href='/upload'>Upload File</a>|
+<a href='/profile'>View/Edit Profile</a> | 
+<a href='/logout'>Logout</a>
+</center>
+
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+'''
+MIT License
+
+Copyright (c) 2019 Arshdeep Bahga and Vijay Madisetti
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+'''
+
+#Request
+curl -X GET 
+ "mycluster.us-east-1.es.amazonaws.com/movies/_search?pretty" 
+ -H 'Content-Type: application/json' -d'
+ {
+   "size": 0,
+   "aggs": {
+     "group_by_year": {
+       "terms": {
+         "field": "year"
+       },
+       "aggs": {
+         "average_rating": {
+           "avg": {
+             "field": "rating"
+           }
+         }
+       }
+     }
+   }
+ }
+ '
+
+#Response
+{
+  "took" : 16,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 44,
+    "max_score" : 0.0,
+    "hits" : [ ]
+  },
+  "aggregations" : {
+    "group_by_year" : {
+      "doc_count_error_upper_bound" : 0,
+      "sum_other_doc_count" : 21,
+      "buckets" : [
+        {
+          "key" : 1994,
+          "doc_count" : 4,
+          "average_rating" : {
+            "value" : 8.900000095367432
+          }
+        },
+        {
+          "key" : 1999,
+          "doc_count" : 3,
+          "average_rating" : {
+            "value" : 8.666666666666666
+          }
+        },
+        {
+          "key" : 2002,
+          "doc_count" : 3,
+          "average_rating" : {
+            "value" : 8.600000063578287
+          }
+        },
+        {
+          "key" : 1954,
+          "doc_count" : 2,
+          "average_rating" : {
+            "value" : 8.599999904632568
+          }
+        },
+        {
+          "key" : 1991,
+          "doc_count" : 2,
+          "average_rating" : {
+            "value" : 8.550000190734863
+          }
+        },
+        {
+          "key" : 1995,
+          "doc_count" : 2,
+          "average_rating" : {
+            "value" : 8.600000381469727
+          }
+        },
+        {
+          "key" : 1998,
+          "doc_count" : 2,
+          "average_rating" : {
+            "value" : 8.550000190734863
+          }
+        },
+        {
+          "key" : 2001,
+          "doc_count" : 2,
+          "average_rating" : {
+            "value" : 8.600000381469727
+          }
+        },
+        {
+          "key" : 2014,
+          "doc_count" : 2,
+          "average_rating" : {
+            "value" : 8.550000190734863
+          }
+        },
+        {
+          "key" : 1931,
+          "doc_count" : 1,
+          "average_rating" : {
+            "value" : 8.5
+          }
+        }
+      ]
+    }
+  }
+}
+

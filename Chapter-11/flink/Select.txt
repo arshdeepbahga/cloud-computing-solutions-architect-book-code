@@ -1,0 +1,6 @@
+#Select (SplitStream -> DataStream)
+positiveDataStream = splited_stream.select("positive")
+negativeDataStream = splited_stream.select("negative")
+positiveAndNegativeDataStream = 
+        splited_stream.select("positive", "negative")
+    

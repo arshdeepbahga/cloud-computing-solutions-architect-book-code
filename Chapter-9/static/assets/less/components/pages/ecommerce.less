@@ -1,0 +1,132 @@
+/* ------------------------------------------------------------------------------
+ *
+ *  # Ecommerce stuff
+ *
+ *  Specific styles for Ecommerce set of pages
+ *
+ *  Version: 1.0
+ *  Latest update: Mar 19, 2017
+ *
+ * ---------------------------------------------------------------------------- */
+
+
+// Elements
+// ------------------------------
+
+// Size filter
+.row-labels {
+    margin-bottom: (@line-height-computed / 2);
+
+    // Make labels slightly bigger
+    .label {
+        display: block;
+        padding-top: 4px;
+        padding-bottom: 3px;
+        margin-bottom: (@line-height-computed / 2);
+    }
+}
+
+// Color filter
+.row-colors {
+    margin-bottom: (@line-height-computed / 2);
+
+    > div {
+        text-align: center;
+        margin-bottom: (@line-height-computed / 2);
+
+        > a {
+            position: relative;
+            padding: @content-padding-base;
+            display: block;
+            border-radius: @border-radius-base;
+            color: #fff;
+
+            > i {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                margin: -(@icon-font-size / 2) 0 0 -(@icon-font-size / 2);
+            }
+        }
+
+        > span {
+            display: block;
+            margin-top: 5px;
+            color: @text-muted;
+            font-size: @font-size-mini;
+        }
+    }
+}
+
+
+// Pricing tables
+// ------------------------------
+
+// Base
+.pricing-table {
+
+    // Price label
+    .pricing-table-price {
+        font-size: 42px;
+
+        // Currency sign
+        > span {
+            font-size: 30px;
+            margin-right: 5px;
+        }
+    }
+
+    // List of options
+    ul > li {
+        padding: @content-padding-base 0;
+        border-bottom: 1px solid fade(#000, 10%);
+    }
+    div[class*=bg-] ul > li {
+        border-color: fade(#fff, 20%);
+    }
+}
+
+// Single panel
+.pricing-table-panel {
+    .pricing-table-body {
+        @pricing-table-two-borders: 1px 0 0 @panel-inner-border, 0 1px 0 @panel-inner-border; // user shadow as a border
+
+        padding: @content-padding-large;
+        text-align: center;
+        .box-shadow(@pricing-table-two-borders);
+    }
+}
+
+
+// Ribbons
+// ------------------------------
+
+// Container
+.ribbon-container {
+    width: 104px;
+    height: 106px;
+    overflow: hidden;
+    position: absolute;
+    top: -1px;
+    right: -1px;
+}
+
+// Corner ribbon
+.ribbon {
+    text-align: center;
+    font-size: @font-size-small;
+    line-height: @line-height-small;
+    font-weight: 500;
+    text-transform: uppercase;
+    position: relative;
+    padding: 5px 0;
+    left: -11px;
+    top: 25px;
+    width: 150px;
+    background-color: @color-success-500;
+    color: #fff;
+    letter-spacing: 0.25px;
+    z-index: (@zindex-navbar - 1);
+    .rotate(45deg);
+    .box-shadow(0 4px 6px fade(#000, 10%));
+}

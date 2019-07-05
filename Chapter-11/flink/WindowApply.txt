@@ -1,0 +1,11 @@
+#Window Apply (PythonWindowedStream -> PythonDataStream)
+class WindowAvg(WindowFunction):
+    def apply(self, key, window, values, collector):
+        total = 0
+        count = 0
+        for value in values:
+            total += value[0]
+            count=count+1
+        collector.collect((key, total/count))
+
+windowed_stream.apply(WindowAvg())

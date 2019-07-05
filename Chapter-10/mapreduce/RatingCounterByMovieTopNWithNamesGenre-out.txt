@@ -1,0 +1,14 @@
+$ python mr7.py ratings.csv --movies=movies.csv
+
+#Output
+329	"Forrest Gump (1994)"
+307	"Pulp Fiction (1994)"
+215	"Toy Story (1995)"
+183	"Aladdin (1992)"
+181	"Fargo (1996)"
+178	"True Lies (1994)"
+171	"Back to the Future (1985)"
+170	"Shrek (2001)"
+165	"Men in Black (a.k.a. MIB) (1997)"
+149	"Pirates of the Caribbean: The Curse of the Black Pearl (2003)"
+

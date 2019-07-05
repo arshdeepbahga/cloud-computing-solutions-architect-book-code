@@ -1,0 +1,10 @@
+#Download the stable release of Neo4j for Linux 
+#from http://neo4j.com/download/ 
+
+#Extract the archive
+tar -xf neo4j-*.tar.gz 
+
+#Run neo4j
+NEO4J_HOME/bin/neo4j start
+
+#Visit http://localhost:7474 in your web browser.

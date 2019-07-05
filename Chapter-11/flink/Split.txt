@@ -1,0 +1,11 @@
+#Split (PythonDataStream -> PythonSplitStream)
+class StreamSelector(OutputSelector):
+    def select(self, value):
+        if value >0: 
+            return ["positive"]
+        elif value <0:
+            return ["negative"]
+        else:
+            return ["zero"]
+
+splitedStream = dataStream.split(StreamSelector())

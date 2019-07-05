@@ -1,0 +1,10 @@
+#Download Cassandra distribution
+wget http://www.eu.apache.org/dist/cassandra/2.1.10/ apache-cassandra-2.1.10-bin.tar.gz
+tar -xzf apache-cassandra-2.1.10-bin.tar.gz
+cd apache-cassandra-2.1.10
+
+#Run Cassandra
+bin/cassandra -f
+
+#Run CQL shell
+bin/cqlsh

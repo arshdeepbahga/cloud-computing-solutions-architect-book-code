@@ -1,0 +1,21 @@
+myagent.sources = r1 
+myagent.channels = c1 
+myagent.sinks = k1 
+ 
+# Define source 
+myagent.sources.r1.type = netcat 
+myagent.sources.r1.bind = 0.0.0.0 
+myagent.sources.r1.port = 6666 
+ 
+#Define Sink 
+myagent.sinks.k1.type = file_roll 
+myagent.sinks.k1.sink.directory = /var/log/flume 
+ 
+#Define Channel 
+myagent.channels.c1.type = file 
+myagent.channels.c1.checkpointDir = /var/flume/checkpoint 
+myagent.channels.c1.dataDirs = /var/flume/data 
+ 
+# Bind the source and sink to the channel 
+myagent.sources.r1.channels = c1 
+myagent.sinks.k1.channel = c1

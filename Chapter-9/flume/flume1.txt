@@ -1,0 +1,21 @@
+<agent name>.sources = <source-1> <source-2> ... <source-N> 
+<agent name>.channels = <channel-1> <channel-2> ... <channel-N> 
+<agent name>.sinks = <sink-1> <sink-2> ... <sink-N>  
+# Define sources 
+<agent name>.sources.<source-1>.type = <source type>
+:
+<agent name>.sources.<source-N>.type = <source type>  
+# Define sinks 
+<agent name>.sinks.<sink-1>.type = <sink type> 
+:
+<agent name>.sinks.<sink-1>.type = <sink type> 
+# Define channels 
+myagent.channels.<channel-1>.type = <channel type> 
+:
+myagent.channels.<channel-N>.type = <channel type> 
+# Bind the sources and sinks to the channels 
+myagent.sources.<source-1>.channels = <channel-1> 
+myagent.sinks.<sink-1>.channel = <channel-1
+:
+myagent.sources.<source-N>.channels = <channel-1> ... <channel-N> 
+myagent.sinks.<sink-N>.channel = <channel-N>

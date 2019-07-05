@@ -1,0 +1,62 @@
+<html lang="en"> 
+	<head> 
+		<title> Dashboard</title> 
+		<!-- Bootstrap Core CSS --> 
+		<link href="/static/css/bootstrap.min.css" rel="stylesheet"> 
+	</head> 
+	<body> 
+		<div id="page-wrapper"> 
+		<div class="container-fluid"> 
+			<!-- Page Heading --> 
+			<div class="row"> 
+				<div class="col-lg-12"> 
+					<h1 class="page-header"> 
+						Employees  
+					</h1> 
+				</div> 
+			</div> 
+			<!-- /.row --> 
+		</div> 
+		<!-- /.row --> 
+		<div class="row"> 
+		<div class="col-lg-6"> 
+			<div class="panel panel-default"> 
+				<div class="panel-heading"> 
+					<h3 class="panel-title">Employees List</h3> 
+				</div> 
+				<div class="panel-body"> 
+					<div class="table-responsive"> 
+						<table class="table table-bordered table-hover table-striped"> 
+							<thead> 
+								<tr> 
+									<th>Employee No.</th> 
+									<th>Name</th> 
+									<th>Salary</th> 
+									<th>Department</th> 
+								</tr> 
+							</thead> 
+							<tbody> 
+								{% for employee in employees%} 
+								<tr> 
+									<td><a href="/employee/{{employee.number}}/">{{employee.number}}</a></td> 
+									<td>{{employee.name}}</td> 
+									<td>{{employee.salary}}</td> 
+									<td><a href="/department/{{employee.department.number}}/"> 
+                                    {{employee.department.name}}</a></td> 
+								</tr> 
+								{% endfor %} 
+							</tbody> 
+						</table> 
+					</div> 
+					<!-- /.row --> 
+				</div> 
+			</div> 
+			<!-- #page-wrapper --> 
+		</div> 
+		<!-- #wrapper --> 
+		<!-- jQuery --> 
+		<script src="/static/js/jquery.js"></script> 
+		<!-- Bootstrap Core JavaScript --> 
+		<script src="/static/js/bootstrap.min.js"></script> 
+	</body> 
+</html> 

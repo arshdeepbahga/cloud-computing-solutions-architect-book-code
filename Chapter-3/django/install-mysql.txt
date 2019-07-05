@@ -1,0 +1,2 @@
+sudo apt-get install mysql-server mysql-client
+sudo mysqladmin -u root -h localhost password 'mypassword'

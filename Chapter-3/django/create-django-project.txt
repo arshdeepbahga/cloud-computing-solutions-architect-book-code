@@ -1,0 +1,8 @@
+#Create a new project
+django-admin.py startproject myproject
+
+#Create an application within the project
+python mangage.py startapp myapp
+
+#Starting development server
+python manage.py runserver

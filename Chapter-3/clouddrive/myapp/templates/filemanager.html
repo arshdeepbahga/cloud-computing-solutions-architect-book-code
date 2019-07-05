@@ -1,0 +1,205 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<head>
+	<meta charset="utf-8">
+<title>Cloud Drive</title>
+<link href="/static/styles/demo_style.css" rel="stylesheet" type="text/css">
+<link href="/static/styles/bootstrap.css" rel="stylesheet" type="text/css">
+	<script src="/static/elFinder/jquery/jquery-1.9.1.min.js" type="text/javascript" charset="utf-8"></script>
+	
+
+	
+	<script src="/static/elFinder/jquery/jquery-ui-1.10.1.custom.min.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="/static/elFinder/jquery/ui-themes/smoothness/jquery-ui-1.10.1.custom.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	
+	<link rel="stylesheet" href="/static/elFinder/css/common.css"      type="text/css">
+	<link rel="stylesheet" href="/static/elFinder/css/dialog.css"      type="text/css">
+	<link rel="stylesheet" href="/static/elFinder/css/toolbar.css"     type="text/css">
+	<link rel="stylesheet" href="/static/elFinder/css/navbar.css"      type="text/css">
+	<link rel="stylesheet" href="/static/elFinder/css/statusbar.css"   type="text/css">
+	<link rel="stylesheet" href="/static/elFinder/css/contextmenu.css" type="text/css">
+	<link rel="stylesheet" href="/static/elFinder/css/cwd.css"         type="text/css">
+	<link rel="stylesheet" href="/static/elFinder/css/quicklook.css"   type="text/css">
+	<link rel="stylesheet" href="/static/elFinder/css/commands.css"    type="text/css">
+
+	<link rel="stylesheet" href="/static/elFinder/css/fonts.css"       type="text/css">
+	<link rel="stylesheet" href="/static/elFinder/css/theme.css"       type="text/css">
+
+	<!-- elfinder core -->
+	<script src="/static/elFinder/js/elFinder.js"></script>
+	<script src="/static/elFinder/js/elFinder.version.js"></script>
+	<script src="/static/elFinder/js/jquery.elfinder.js"></script>
+	<script src="/static/elFinder/js/elFinder.resources.js"></script>
+	<script src="/static/elFinder/js/elFinder.options.js"></script>
+	<script src="/static/elFinder/js/elFinder.history.js"></script>
+	<script src="/static/elFinder/js/elFinder.command.js"></script>
+
+	<!-- elfinder ui -->
+	<script src="/static/elFinder/js/ui/overlay.js"></script>
+	<script src="/static/elFinder/js/ui/workzone.js"></script>
+	<script src="/static/elFinder/js/ui/navbar.js"></script>
+	<script src="/static/elFinder/js/ui/dialog.js"></script>
+	<script src="/static/elFinder/js/ui/tree.js"></script>
+	<script src="/static/elFinder/js/ui/cwd.js"></script>
+	<script src="/static/elFinder/js/ui/toolbar.js"></script>
+	<script src="/static/elFinder/js/ui/button.js"></script>
+	<script src="/static/elFinder/js/ui/uploadButton.js"></script>
+	<script src="/static/elFinder/js/ui/viewbutton.js"></script>
+	<script src="/static/elFinder/js/ui/searchbutton.js"></script>
+	<script src="/static/elFinder/js/ui/sortbutton.js"></script>
+	<script src="/static/elFinder/js/ui/panel.js"></script>
+	<script src="/static/elFinder/js/ui/contextmenu.js"></script>
+	<script src="/static/elFinder/js/ui/path.js"></script>
+	<script src="/static/elFinder/js/ui/stat.js"></script>
+	<script src="/static/elFinder/js/ui/places.js"></script>
+
+	<!-- elfinder commands -->
+	<script src="/static/elFinder/js/commands/back.js"></script>
+	<script src="/static/elFinder/js/commands/forward.js"></script>
+	<script src="/static/elFinder/js/commands/reload.js"></script>
+	<script src="/static/elFinder/js/commands/up.js"></script>
+	<script src="/static/elFinder/js/commands/home.js"></script>
+	<script src="/static/elFinder/js/commands/copy.js"></script>
+	<script src="/static/elFinder/js/commands/cut.js"></script>
+	<script src="/static/elFinder/js/commands/paste.js"></script>
+	<script src="/static/elFinder/js/commands/open.js"></script>
+	<script src="/static/elFinder/js/commands/rm.js"></script>
+	<script src="/static/elFinder/js/commands/info.js"></script>
+	<script src="/static/elFinder/js/commands/duplicate.js"></script>
+	<script src="/static/elFinder/js/commands/rename.js"></script>
+	<script src="/static/elFinder/js/commands/help.js"></script>
+	<script src="/static/elFinder/js/commands/getfile.js"></script>
+	<script src="/static/elFinder/js/commands/mkdir.js"></script>
+	<script src="/static/elFinder/js/commands/mkfile.js"></script>
+	<script src="/static/elFinder/js/commands/upload.js"></script>
+	<script src="/static/elFinder/js/commands/download.js"></script>
+	<script src="/static/elFinder/js/commands/edit.js"></script>
+	<script src="/static/elFinder/js/commands/quicklook.js"></script>
+	<script src="/static/elFinder/js/commands/quicklook.plugins.js"></script>
+	<script src="/static/elFinder/js/commands/extract.js"></script>
+	<script src="/static/elFinder/js/commands/archive.js"></script>
+	<script src="/static/elFinder/js/commands/search.js"></script>
+	<script src="/static/elFinder/js/commands/view.js"></script>
+	<script src="/static/elFinder/js/commands/resize.js"></script>
+	<script src="/static/elFinder/js/commands/sort.js"></script>	
+	<script src="/static/elFinder/js/commands/netmount.js"></script>	
+
+	<!-- elfinder languages -->
+
+	<script src="/static/elFinder/js/i18n/elfinder.en.js"></script>
+	
+
+	<!-- elfinder dialog -->
+	<script src="/static/elFinder/js/jquery.dialogelfinder.js"></script>
+
+	<!-- elfinder 1.x connector API support -->
+	<script src="/static/elFinder/js/proxy/elFinderSupportVer1.js"></script>
+
+	<!-- elfinder custom extenstions -->
+	<script src="extensions/jplayer/elfinder.quicklook.jplayer.js"></script>
+
+	<style type="text/css">
+		body { font-family:arial, verdana, sans-serif;}
+		.button {
+			width: 100px;
+			position:relative;
+			display: -moz-inline-stack;
+			display: inline-block;
+			vertical-align: top;
+			zoom: 1;
+			*display: inline;
+			margin:0 3px 3px 0;
+			padding:1px 0;
+			text-align:center;
+			border:1px solid #ccc;
+			background-color:#eee;
+			margin:1em .5em;
+			padding:.3em .7em;
+			border-radius:5px; 
+			-moz-border-radius:5px; 
+			-webkit-border-radius:5px;
+			cursor:pointer;
+		}
+
+	</style>
+
+	<script>
+		$().ready(function() {
+			$('#finder').elfinder({
+				url : 'php/connector.php',
+				handlers : {
+                    select : function(event, elfinderInstance) {
+                        var selected = event.data.selected;
+						
+						if (selected.length) {
+						}
+						
+                    }
+                },
+
+				lang : 'en',
+				customData : {answer : 42},
+				
+			})
+
+			
+			
+			$('#back').click(function(e) {
+				f1.exec('back')
+			})
+			$('#fwd').click(function(e) {
+				f1.exec('forward')
+			})
+
+			$('#dialog').click(function() {
+				var fm = $('<div/>').dialogelfinder({
+					url : 'php/connector.php',
+					lang : 'en',
+					width : 840,
+					destroyOnClose : true,
+					getFileCallback : function(files, fm) {
+						console.log(files);
+					},
+					commandsOptions : {
+						getfile : {
+							oncomplete : 'close',
+							folders : true
+						}
+					}
+				}).dialogelfinder('instance');
+			});
+
+		});
+	</script>
+
+</head>
+<body>
+<div class="demoHead">   
+  <div>
+    <div style="float:left;">
+      <h1>Cloud Drive</h1>
+      <h2>a cloud-based app for document storage</h2>
+    </div>
+  
+    <div style="clear:both;"></div>
+  </div>
+
+</div>
+ <br> <br>
+<center>
+Logged in as {{userfname}} {{username}}
+</center>
+		<div id="finder">finder <span>here</span></div>
+
+	<br clear="all"/>
+<center>
+<br>
+<a href='/'>Home</a>| 
+<a href='/profile'>View/Edit Profile</a> | 
+<a href='/logout'>Logout</a>
+</center>
+
+
+</body>
+</html>

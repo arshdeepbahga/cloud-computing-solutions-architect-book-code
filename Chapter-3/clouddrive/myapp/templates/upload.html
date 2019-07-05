@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cloud Drive</title>
+<link href="/static/styles/demo_style.css" rel="stylesheet" type="text/css">
+<link href="/static/styles/bootstrap.css" rel="stylesheet" type="text/css">
+
+</head><body>
+
+<div class="demoHead">   
+  <div>
+    <div style="float:left;">
+      <h1>Cloud Drive</h1>
+      <h2>a cloud-based app for document storage</h2>
+    </div>
+  
+    <div style="clear:both;"></div>
+  </div>
+
+ 
+
+
+</div>
+<center>
+<br>
+Logged in as {{username}}
+<br><br><br><br>
+
+<form action="/upload/" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+
+ <p>{{ form.non_field_errors }}</p>
+			            <p>
+            	{{ form.myfilefield.errors }}
+                {{ form.myfilefield }}
+            </p>
+
+<input type="submit" value="Upload" />
+</form>
+<br><br><br><br>
+<a href='/'>Home</a>| 
+<a href='/upload'>Upload File</a>|
+<a href='/profile'>View/Edit Profile</a> | 
+<a href='/logout'>Logout</a>
+</center>
+
+
+</body>
+</html>

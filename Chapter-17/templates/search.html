@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!-- HEAD -->
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Photo Gallery</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,400,700,500,300,300italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href="/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/et-line/et-line.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/themify/themify.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/plugins/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" type="text/css"/>
+<link href="/assets/css/global.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="/assets/plugins/jquery.min.js"></script>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body>
+
+<!-- WRAPPER -->
+<div class="wrapper">
+    
+
+    <!--========== PAGE CONTENT ==========-->
+    <div class="bg-color-sky-light">
+    <br>
+    <center><h2>Photo Gallery</h2>
+    <br>
+    <a href="/">Home</a> | <a href="/add">Add Photo</a><br><br>
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="blog-grid-content">
+<form  method='get' action="/search">
+                            <input type="text" name="query" id="query" class="form-control" placeholder="Search photos">
+                        </div>
+                </div>
+                
+
+               
+            </div>
+        </div><br><br>
+    Showing search results for "{{searchquery}}"
+    </center>
+        <!-- Theme Portfolio -->
+        <div class="content-sm container">
+            <div class="theme-portfolio">
+
+                <!-- Portfolio 4 Columns Grid -->
+                <div id="portfolio-4-col-grid" class="cbp">
+                    {% for p in photos %}
+                    <!-- Cbp Item -->
+                    <div class="cbp-item idea web-design theme-portfolio-item-v2 theme-portfolio-item-xs">
+                        <div class="cbp-caption">
+                            <div class="cbp-caption-defaultWrap theme-portfolio-active-wrap">
+                                <img src="{{p.URL}}" alt="">
+                                <div class="theme-icons-wrap theme-portfolio-lightbox">
+                                    <a class="cbp-lightbox" href="{{p.URL}}" data-title="Portfolio">
+                                        <i class="theme-icons theme-icons-white-bg theme-icons-sm radius-3 icon-focus"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="theme-portfolio-title-heading">
+                            <h4 class="theme-portfolio-title"><a href="/{{p.PhotoID}}">{{p.Title}}</a></h4>
+                            <span class="theme-portfolio-subtitle">{{p.CreationTime}}</span>
+                        </div>
+                    </div>
+                    <!-- End Cbp Item -->
+                    {% endfor %}
+                                        
+                </div>
+                <!-- End Portfolio 4 Columns Grid -->
+            </div>
+        </div>
+        <!-- End Theme Portfolio -->
+
+        
+    </div>
+    <!--========== END PAGE CONTENT ==========-->
+    
+    
+</div>
+<!-- END WRAPPER -->
+
+<script type="text/javascript" src="/assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/assets/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+<script type="text/javascript" src="/assets/scripts/app.js"></script>
+<script type="text/javascript" src="/assets/scripts/portfolio/portfolio-4-col-grid.js"></script>
+</body>
+<!-- END BODY -->
+
+</html>

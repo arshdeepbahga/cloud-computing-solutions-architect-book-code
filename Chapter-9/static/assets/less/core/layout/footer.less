@@ -1,0 +1,42 @@
+/* ------------------------------------------------------------------------------
+*
+*  # Footer
+*
+*  Main footer styles, currently 1 version only
+*
+*  Version: 1.2
+*  Latest update: Jan 5, 2017
+*
+* ---------------------------------------------------------------------------- */
+
+
+// Stick footer to the bottom of the page
+.footer {
+	position: absolute;
+	bottom: (@line-height-computed * 1.5);
+
+	// Stick to bottom is footer is navbar
+	&.navbar {
+		left: 0;
+		right: 0;
+		bottom: 0;
+
+		// Remove z-index if footer navbar has absolute position
+		&-fixed-bottom {
+			z-index: auto;
+		}
+	}
+	
+    // Hide standard footer if navbar is used
+    body[class*=navbar-bottom] &:not(.navbar) {
+        display: none;
+    }
+}
+
+// In boxed layout
+.footer-boxed {
+	left: 0;
+	right: 0;
+	padding-left: @grid-gutter-width;
+	padding-right: @grid-gutter-width;
+}

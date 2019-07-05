@@ -1,0 +1,46 @@
+[ 
+  { 
+    "id" : "1", 
+    "name" : "HTC Desire 816", 
+    "brand" : "HTC", 
+    "display_t" : "5.5 inch S-LCD Display", 
+    "memory_s" : "8 GB", 
+    "price_f" : 150.00, 
+    "color" : "black", 
+    "features" : ["Android 4.4 Kit Kat OS","13 MP Rear Facing BSI Camera", "5 MP Front Facing"] 
+  }, 
+   
+  { 
+    "id" : "2", 
+    "name" : "LG Tribute", 
+    "brand" : "LG", 
+    "display_t" : "4.5 inch Capacitive Display", 
+    "memory_s" : "8 GB", 
+    "price_f" : 65.00, 
+    "color" : "black", 
+    "features" : ["Android 4.4 Kit Kat OS","5 MP Rear Facing FSI Camera"] 
+  }, 
+   
+  { 
+    "id" : "3", 
+    "name" : "Samsung Galaxy S5 White", 
+    "brand" : "Samsung", 
+    "display_t" : "5.1inch Full HD Super AMOLED", 
+    "memory_s" : "16 GB", 
+    "price_f" : 499.99, 
+    "color" : "white", 
+    "features" : ["Android 4.4 Kit Kat OS","16 megapixel camera", "2.5 GHz quad-core processor"] 
+  }, 
+   
+  { 
+    "id" : "4", 
+    "name" : "Kyocera Hydro Vibe", 
+    "brand" : "Kyocera", 
+    "display_t" : "4.5 inch qHD IPS screen", 
+    "memory_s" : "8 GB", 
+    "price_f" : 49.90, 
+    "color" : "black", 
+    "features" : ["Andriod 4.3 Jelly Bean OS","8 MP Rear Facing BSI Camera", "2 MP Front Facing"] 
+  } 
+   
+]

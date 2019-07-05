@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!-- HEAD -->
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Photo Gallery</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,400,700,500,300,300italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/global.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="assets/plugins/jquery.min.js"></script>
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body>
+
+<!-- WRAPPER -->
+<div class="wrapper">
+    
+    
+    <!--========== BACKGROUND COLOR SKY LIGHT ==========-->
+    <div class="bg-color-sky-light">
+        <br>
+   <center><h2>Photo Gallery</h2>
+    <br>
+   <div id="userdata-container"></div><br>
+    <a href="index.html">Home</a> | <a href="addphoto.html">Add Photo</a> | <a id="logoutlink" href="#">Logout</a>
+    </center>
+        <!--========== PAGE CONTENT ==========-->
+        <div class="content-sm container">
+            <div class="row">
+                <div class="col-md-12 md-margin-b-50">
+                    <!-- Blog Grid -->
+                    <article class="blog-grid margin-b-30">
+                        <!-- Blog Grid Content -->
+                        <div class="blog-grid-content">
+                            <h2 class="blog-grid-title-lg">Upload Photo</h2>
+<form  method='post' action="/add" id="addphotoform" enctype="multipart/form-data">
+                            <input type="file" name="imagefile" id="imagefile" class="form-control">
+<br>
+                            <input type="text" name="title" id="title" class="form-control" placeholder="Title">
+<br>
+                            <textarea name="description" id="description" class="form-control" rows="3" placeholder=" Description"></textarea>
+<br>
+                            <input type="text" name="tags" id="tags" class="form-control" placeholder="Tags" >
+                            <br>
+                            <button type="submit" class="btn-base-bg btn-base-sm radius-3" >
+                                Submit</button>
+                            </form>
+                        </div>
+                        <!-- End Blog Grid Content -->
+                    </article>
+                    <!-- End Blog Grid -->
+
+                    
+                </div>
+
+               
+            </div>
+            <!--// end row -->
+        </div>
+        <!--========== END PAGE CONTENT ==========-->
+
+    </div>
+    <!--========== END BACKGROUND COLOR SKY LIGHT ==========-->
+    
+    
+</div>
+<!-- END WRAPPER -->
+
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/scripts/app.js"></script>
+<script type="text/javascript" src="assets/process.js"></script>
+</body>
+<!-- END BODY -->
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Video Transcoding App</title>
+<link href="/static/styles/demo_style.css" rel="stylesheet" type="text/css">
+
+<link href="/static/styles/smart_wizard.css" rel="stylesheet" type="text/css">
+<link href="/static/styles/bootstrap.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/static/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.smartWizard.js"></script>
+
+
+
+</head><body>
+
+<div class="demoHead">   
+  <div>
+    <div style="float:left;">
+      <h1>Video Transcoding App</h1>
+      <h2>a cloud-based app for video transcoding</h2>
+    </div>
+  
+    <div style="clear:both;"></div>
+  </div>
+
+ 
+
+</div>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0">
+<tr><td> 
+
+<h4>Job Details:</h4>
+<br>
+<br>
+
+<h5>Job ID: {{jobid}}</h5>
+<h5>Pipeline ID: {{pipelineid}}</h5>
+<h5>Job Status: {{status}}</h5>
+<h5>Input: {{jobinput}}</h5>
+<h5>Output: {{jobputput}}</h5>
+<br>
+<br>
+<br>
+
+
+{% if status == 'Complete' %}
+<h4>Video transcoding is complete</h4>
+<h4>Click <a href="http://mi_raw_data.s3.amazonaws.com/{{outputfilename}}">here</a> to download transcoded video.</h4>
+{% endif %} 		
+
+</td></tr>
+</table>
+    		
+</body>
+</html>

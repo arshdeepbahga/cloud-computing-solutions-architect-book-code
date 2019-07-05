@@ -1,0 +1,6 @@
+#FlatMap (PythonDataStream -> PythonDataStream)
+class Tokenizer(FlatMapFunction):
+    def flatMap(self, word, collector):
+        collector.collect((1, word))
+
+dataStream.flat_map(Tokenizer())

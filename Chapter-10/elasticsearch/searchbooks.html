@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, 
+        initial-scale=1.0, maximum-scale=1">
+  <link rel="stylesheet" 
+    href="css/bootstrap.min.css">
+  <title>Book Search Application</title>
+</head>
+<body>
+  <center><h1>Books Search</h1></center>
+  <div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-8">  
+  <input type="text" id="search" class="form-control" 
+    autocomplete="off" placeholder="Search"></div>
+  <div class="col-md-2"></div>
+</div>
+<br>
+  <div id="results"></div>
+  <center>
+  <p id="noresults">No results. Try another search term.</p>
+  <p id="loading">Getting results...</p>
+</center>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/search.js"></script>
+</body>
+</html>

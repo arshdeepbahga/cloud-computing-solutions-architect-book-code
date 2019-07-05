@@ -1,0 +1,158 @@
+'''
+MIT License
+
+Copyright (c) 2019 Arshdeep Bahga and Vijay Madisetti
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+'''
+
+#Request
+curl -X GET 
+ "mycluster.us-east-1.es.amazonaws.com/movies/_search?pretty"
+ -H 'Content-Type: application/json' -d'
+ {
+   "query": {
+     "bool": {
+       "must": { "match_all": {} },
+       "filter": {
+         "range": {
+           "rating": {
+             "gte": 9
+           }
+         }
+       }
+     }
+   }
+ }
+ '
+
+#Response
+{
+  "took" : 22,
+  "timed_out" : false,
+  "_shards" : {
+    "total" : 5,
+    "successful" : 5,
+    "skipped" : 0,
+    "failed" : 0
+  },
+  "hits" : {
+    "total" : 4,
+    "max_score" : 1.0,
+    "hits" : [
+      {
+        "_index" : "movies",
+        "_type" : "movie",
+        "_id" : "0071562",
+        "_score" : 1.0,
+        "_source" : {
+          "rating" : 9.0,
+          "genres" : [
+            "Crime",
+            "Drama"
+          ],
+          "runtime" : "202",
+          "movieID" : "0071562",
+          "title" : "The Godfather: Part II",          
+          "plot" : "The early life and career of Vito Corleone
+                    in 1920s New York City is portrayed, while his
+                    son, Michael, expands and tightens his grip on
+                    the family crime syndicate.",
+          "year" : 1974,
+          "directors" : [
+            "Francis Ford Coppola"
+          ]
+        }
+      },
+      {
+        "_index" : "movies",
+        "_type" : "movie",
+        "_id" : "0111161",
+        "_score" : 1.0,
+        "_source" : {
+          "rating" : 9.3,
+          "genres" : [
+            "Drama"
+          ],
+          "runtime" : "142",
+          "movieID" : "0111161",
+          "title" : "The Shawshank Redemption",          
+          "plot" : "Two imprisoned men bond over a number of years,
+                   finding solace and eventual redemption through
+                   acts of common decency.",
+          "year" : 1994,
+          "directors" : [
+            "Frank Darabont"
+          ]
+        }
+      },
+      {
+        "_index" : "movies",
+        "_type" : "movie",
+        "_id" : "0468569",
+        "_score" : 1.0,
+        "_source" : {
+          "rating" : 9.0,
+          "genres" : [
+            "Action",
+            "Crime",
+            "Drama",
+            "Thriller"
+          ],
+          "runtime" : "152",
+          "movieID" : "0468569",
+          "title" : "The Dark Knight",          
+          "plot" : "When the menace known as the Joker emerges 
+                    from his mysterious past, he wreaks havoc and 
+                    chaos on the people of Gotham. The Dark Knight must 
+                    accept one of the greatest psychological and physical 
+                    tests of his ability to fight injustice.",
+          "year" : 2008,
+          "directors" : [
+            "Christopher Nolan"
+          ]
+        }
+      },
+      {
+        "_index" : "movies",
+        "_type" : "movie",
+        "_id" : "0068646",
+        "_score" : 1.0,
+        "_source" : {
+          "rating" : 9.2,
+          "genres" : [
+            "Crime",
+            "Drama"
+          ],
+          "runtime" : "175",
+          "movieID" : "0068646",
+          "title" : "The Godfather",          
+          "plot" : "The aging patriarch of an organized crime dynasty
+                    transfers control of his clandestine empire to 
+                    his reluctant son.",
+          "year" : 1972,
+          "directors" : [
+            "Francis Ford Coppola"
+          ]
+        }
+      }
+    ]
+  }
+}
+

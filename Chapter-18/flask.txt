@@ -1,0 +1,13 @@
+server {
+    listen 80;
+    listen [::]:80;
+
+    location / {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5000;
+        }
+
+    location /static {
+        alias /home/ubuntu/photogallery/static;
+    }
+}

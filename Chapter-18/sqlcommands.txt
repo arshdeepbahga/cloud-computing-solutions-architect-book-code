@@ -1,0 +1,9 @@
+CREATE TABLE photogallery ( 
+    PhotoID INT PRIMARY KEY NOT NULL, 
+    CreationTime TEXT NOT NULL, 
+    Title TEXT NOT NULL, 
+    Description TEXT NOT NULL, 
+    Tags TEXT NOT NULL, 
+    URL TEXT NOT NULL,
+    EXIF TEXT NOT NULL
+);

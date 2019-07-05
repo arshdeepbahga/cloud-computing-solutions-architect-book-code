@@ -1,0 +1,48 @@
+<html>
+  <body>
+    {% block includes %}
+    <link rel="stylesheet" type="text/css" media="screen" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/themes/smoothness/jquery-ui.css" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" ></script> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.14/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ STATIC_URL }}css/elfinder.min.css">
+    <script type="text/javascript" src="{{ STATIC_URL }}js/elfinder.full.js"></script>
+    {% endblock includes %}
+
+    {% block elfinder_init %}
+    <script type="text/javascript" charset="utf-8">
+        $().ready(function() {
+        var elf = $('#elfinder').elfinder({
+            url : '{% url elfinder_connector coll_id %}',
+            places : 'h',
+            rememberLastDir : false,
+            placesFirst : false,
+            requestType: 'post',
+            customData : { csrfmiddlewaretoken : '{{ csrf_token }}',  },
+            uiOptions : { toolbar : [ 
+                            ['back', 'forward'],
+                            ['mkdir', 'mkfile'],
+                            ['copy', 'cut', 'paste'],
+                            ['rm'],
+                            ['rename'],
+                            ['view'],
+                         ]
+                        },
+            contextmenu : { navbar : ['open', '|', 'copy', 'cut', 'paste', '|',
+                                      'rm'],
+                            cwd : ['reload', 'back', '|',
+                                   'mkdir', 'mkfile', 'paste', '|',
+                                   'upload'],
+                            files : ['edit', 'open', '|',
+                                     'copy', 'cut', 'paste', '|',
+                                     'rm', 'rename'],
+                          }
+        }).elfinder('instance');            
+        });
+    </script>
+    {% endblock elfinder_init %}
+
+    {% block elfinder_div %}
+    <div id="elfinder"></div>
+    {% endblock elfinder_div %}
+  </body>
+</html>

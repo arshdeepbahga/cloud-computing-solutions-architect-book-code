@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!-- HEAD -->
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Photo Gallery</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,400,700,500,300,300italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/et-line/et-line.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/themify/themify.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/global.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="assets/plugins/jquery.min.js"></script>
+
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body>
+
+<!-- WRAPPER -->
+<div class="wrapper">
+    
+    
+    <!--========== BACKGROUND COLOR SKY LIGHT ==========-->
+    <div class="bg-color-sky-light">
+        <br>
+    <center><h2>Photo Gallery</h2>
+    <br>
+    <div id="userdata-container"></div><br>
+    <a href="index.html">Home</a> | <a href="addphoto.html">Add Photo</a> | <a id="logoutlink" href="/logout">Logout</a>
+    <br><br>
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="blog-grid-content">
+<form  method='get' id="searchform" action="/search">
+                            <input type="text" name="query" id="query" class="form-control" placeholder="Search photos">
+                        </div>
+                </div>
+                
+
+               
+            </div>
+        </div>
+    </center>
+        <!--========== PAGE CONTENT ==========-->
+        <div class="content-sm container">
+            <div class="row">
+                <div class="col-md-9 md-margin-b-50">
+                    <!-- Blog Grid -->
+                    <article class="blog-grid margin-b-30" id="viewphoto-container">
+                        <!-- Image -->
+                        
+                        <!-- End Blog Grid Content -->
+                    </article>
+                    <!-- End Blog Grid -->
+
+                    
+                </div>
+
+                <!--========== BLOG SIDEBAR ==========-->
+                <div class="col-md-3">
+                    
+
+                    <!-- Blog Sidebar -->
+                    <div class="blog-sidebar">
+                        <div class="blog-sidebar-heading">
+                            <i class="blog-sidebar-heading-icon icon-paperclip"></i>
+                            <h4 class="blog-sidebar-heading-title">Tags</h4>
+                        </div>
+                        <div class="blog-sidebar-content">
+                            <!-- Blog Grid Tags -->
+                            <ul class="list-inline blog-sidebar-tags" id="tags-container">                            
+                            </ul>
+                            <!-- End Blog Grid Tags -->
+                        </div>
+                    </div>
+                    
+                </div>
+                <!--========== END BLOG SIDEBAR ==========-->
+            </div>
+            <!--// end row -->
+        </div>
+        <!--========== END PAGE CONTENT ==========-->
+
+    </div>
+    <!--========== END BACKGROUND COLOR SKY LIGHT ==========-->
+    
+    
+</div>
+<!-- END WRAPPER -->
+
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+<script type="text/javascript" src="assets/scripts/app.js"></script>
+<script type="text/javascript" src="assets/process.js"></script>
+</body>
+<!-- END BODY -->
+
+</html>

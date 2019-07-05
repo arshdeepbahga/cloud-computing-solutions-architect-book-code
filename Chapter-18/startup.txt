@@ -1,0 +1,33 @@
+sudo apt update
+sudo apt install -q -y python-dev python-pip
+sudo apt-get install -q -y libmysqlclient-dev
+sudo apt-get install -q -y nginx supervisor
+sudo pip install MySQL-python 
+sudo pip install boto3 
+sudo pip install flask
+sudo pip install exifread
+sudo pip install gunicorn
+
+wget http://s3.amazonaws.com/yours3bucket/photogallery.tar.xz \
+     -O /home/ubuntu/photogallery.tar.xz 
+
+tar -xf /home/ubuntu/photogallery.tar.xz 
+chmod -x /home/ubuntu/photogallery/app.py 
+
+sudo cp /home/ubuntu/photogallery/photogallery.conf \
+        /etc/supervisor/conf.d/
+
+sudo supervisorctl reread
+sudo supervisorctl update
+
+sudo rm /etc/nginx/sites-available/default 
+sudo rm /etc/nginx/sites-enabled/default 
+
+sudo cp /home/ubuntu/photogallery/flask \
+                /etc/nginx/sites-available/
+
+sudo ln -s /etc/nginx/sites-available/flask \
+                -t /etc/nginx/sites-enabled/
+
+sudo service nginx restart
+sudo supervisorctl restart photogallery

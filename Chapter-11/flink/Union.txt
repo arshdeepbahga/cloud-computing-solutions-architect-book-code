@@ -1,0 +1,2 @@
+#Union (PythonDataStream -> PythonDataStream)
+dataStream.union(dataStream1, dataStream2);

@@ -1,0 +1,6 @@
+#Map (PythonDataStream -> PythonDataStream)
+class Multiply(MapFunction):
+    def map(self, value):
+        return value * 4
+
+dataStream.map(Multiply())

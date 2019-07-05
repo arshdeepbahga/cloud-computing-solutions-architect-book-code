@@ -1,0 +1,16 @@
+{
+  "Id": "Policy1542777988665",
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Stmt1542777985222",
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject"
+      ],
+      "Effect": "Allow",
+      "Resource": "arn:aws:s3:::cloudcomputingcourse2018",
+      "Principal": "*"
+    }
+  ]
+}

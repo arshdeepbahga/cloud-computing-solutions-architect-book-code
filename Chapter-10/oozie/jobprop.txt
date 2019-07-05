@@ -1,0 +1,15 @@
+nameNode=hdfs://master:54310 
+ jobTracker=master:54311 
+ queueName=default 
+  
+ oozie.libpath=${nameNode}/user/hduser/share/lib 
+ oozie.use.system.libpath=true 
+ oozie.wf.rerun.failnodes=true 
+  
+ oozieProjectRoot=${nameNode}/user/hduser/oozieProject 
+ appPath=${oozieProjectRoot}/pythonApplication 
+ oozie.wf.application.path=${appPath} 
+ oozieLibPath=${oozie.libpath} 
+  
+ inputDir=${oozieProjectRoot}/pythonApplication/data/ 
+ outputDir=${appPath}/output

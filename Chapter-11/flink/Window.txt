@@ -1,0 +1,21 @@
+#Window (PythonKeyedStream -> PythonWindowedStream)
+
+#Sliding Count Window
+# Last 10 elements, sliding by 5 elements
+keyed_stream.count_window(10, 5)  
+
+#Tumbling Count Window
+# Last 10 elements, sliding by 10 elements
+keyed_stream.count_window(10, 10)  
+
+#Time Window
+# Last 100 milliseconds of data
+keyed_stream.time_window(milliseconds(100))  
+
+#Sliding Time Window
+# Last 100 milliseconds of data, sliding by 20 milliseconds
+keted_stream.time_window(milliseconds(100), milliseconds(20))  
+
+#Tumbling Time Window
+# Last 100 milliseconds of data, sliding by 100 milliseconds
+keted_stream.time_window(milliseconds(100), milliseconds(100))  

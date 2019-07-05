@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Video Transcoding App</title>
+<link href="/static/styles/demo_style.css" rel="stylesheet" type="text/css">
+
+<link href="/static/styles/smart_wizard.css" rel="stylesheet" type="text/css">
+<link href="/static/styles/bootstrap.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="/static/js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/static/js/jquery.smartWizard.js"></script>
+
+
+
+<script type="text/javascript">
+    $(document).ready(function(){
+  		$('#wizard').smartWizard({transitionEffect:'fade',onFinish:onFinishCallback});
+    
+      function onFinishCallback(){
+         $('form').submit();
+      }     
+		});
+</script>
+
+
+</head><body>
+
+<div class="demoHead">   
+  <div>
+    <div style="float:left;">
+      <h1>Live Streaming App</h1>
+      <h2>a cloud-based app for live video streaming</h2>
+    </div>
+  
+    <div style="clear:both;"></div>
+  </div>
+
+ 
+
+</div>
+
+<table align="center" border="0" cellpadding="0" cellspacing="0">
+<tr><td> 
+<!-- Smart Wizard -->
+        <h2>{{title}}</h2> 
+
+	<object width="600" height="409"> <param name="movie" value="http://fpdownload.adobe.com/strobe/FlashMediaPlayback.swf"></param>
+           <param name="flashvars" value="src=rtmp://{{publicdns}}/live/livestream/&poster=/static/cloud.jpg"></param>
+           <param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param>
+           <embed src="http://fpdownload.adobe.com/strobe/FlashMediaPlayback.swf" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="600" height="409" 
+          flashvars="src=rtmp://{{publicdns}}/live/livestream/&poster=/static/cloud.jpg"></embed>
+        </object>
+	<h5>Description: </h5> {{description}}
+
+
+	
+ 		
+</td></tr>
+</table>
+    		
+</body>
+</html>

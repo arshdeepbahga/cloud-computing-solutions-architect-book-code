@@ -1,0 +1,5 @@
+$ python mr4.py ratings.csv --movies=movies.csv
+
+#Output
+329	"Forrest Gump (1994)"
+

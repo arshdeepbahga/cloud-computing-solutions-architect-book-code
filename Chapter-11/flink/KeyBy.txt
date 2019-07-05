@@ -1,0 +1,6 @@
+#KeyBy (PythonDataStream -> PythonKeyedStream)
+class Selector(KeySelector):
+    def getKey(self, input):
+        return input[0]  # Key by the first element in a tuple
+
+dataStream.key_by(Selector())

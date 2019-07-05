@@ -1,0 +1,11 @@
+sudo apt-get -q -y update
+sudo ufw disable
+sudo apt-get -q -y install ntp
+sudo service ntp start
+
+sudo wget -O /etc/apt/sources.list.d/ambari.list http://public-repo-1.hortonworks.com/ambari/ubuntu16/2.x/updates/2.6.2.0/ambari.list
+sudo apt-key adv --recv-keys --keyserver keyserver.ubuntu.com B9733A7A07513CAD
+sudo apt-get -q -y update
+sudo apt-get -q -y install ambari-server
+
+sudo apt-get -q -y install build-essential python-dev python-setuptools maven python2.7-dev python-pip

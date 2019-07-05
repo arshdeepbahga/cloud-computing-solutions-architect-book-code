@@ -1,0 +1,15 @@
+$ python mr5.py ratings.csv --movies=movies.csv
+
+#Output
+"Scanners (1981)"	3.25
+"\"Class"	3.5
+"\"Dark Knight"	4.238255033557047
+"\"Do You Remember Dolly Bell? (Sjecas li se"	4.0
+"Home Alone (1990)"	2.9956896551724137
+"Never Back Down (2008)"	3.5
+"Take This Job and Shove It (1981)"	1.0
+"Drillbit Taylor (2008)"	3.5
+"Thief (1981)"	4.5
+"Ghost (1990)"	3.4347826086956523
+"Die Another Day (2002)"	2.925925925925926
+

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Air Quality Monitoring</title>
+  <link href="/static/assets/css/icons/icomoon/styles.css" 
+      rel="stylesheet" type="text/css">
+  <link href="/static/assets/css/bootstrap.css" 
+      rel="stylesheet" type="text/css">
+  <link href="/static/assets/css/core.css" 
+      rel="stylesheet" type="text/css">
+  <link href="/static/assets/css/components.css" 
+      rel="stylesheet" type="text/css">
+  <link href="/static/assets/css/colors.css" 
+      rel="stylesheet" type="text/css">
+  <script type="text/javascript" 
+    src="/static/assets/js/core/libraries/jquery.min.js"></script>
+  <script type="text/javascript" 
+    src="/static/assets/js/core/libraries/bootstrap.min.js"></script>
+  <script type="text/javascript" 
+      src="/static/assets/js/plugins/ui/drilldown.js"></script>
+  <script type="text/javascript" 
+      src="/static/assets/js/core/app.js"></script>
+  <script type="text/javascript" 
+    src="/static/assets/js/plugins/tables/datatables/datatables.min.js">      
+  </script>
+  <script type="text/javascript" 
+      src="/static/assets/js/plugins/forms/selects/select2.min.js">
+  </script>
+  <script type="text/javascript" 
+      src="/static/assets/js/pages/datatables_basic.js"></script>
+  <script type="text/javascript" 
+    src="/static/assets/js/listingfilter.js"></script>
+</head>
+<body>
+  <input type="hidden" id="accountType" 
+    name="accountType" value="{{accountType}}">
+  <input type="hidden" id="authorusername" name="variable" 
+    value="{{request.user.first_name}} {{request.user.last_name}}">
+  <script type="text/javascript" 
+    src="/static/assets/js/navbar.js"></script>
+  <div class="page-container">
+    <div class="page-content">
+      <div class="content-wrapper">
+        <div class="panel">
+          <div class="panel-body">
+            <form class="form-horizontal" class="main-search" 
+              action="/search/" method="post" role="form">{%csrf_token%}
+              <div class="row search-option-buttons">
+                <div class="col-sm-12">
+                  <ul class="list-inline 
+                    list-inline-condensed no-margin-bottom">
+                    <li class="dropdown">
+                      <a href="#" class="btn btn-link dropdown-toggle" 
+                        data-toggle="dropdown">
+                        <i class="icon-city position-left"></i> 
+                          Station <span class="caret"></span>
+                      </a>
+                     <ul class="dropdown-menu">
+                     <li><a href="/filter_raw_data/all">All</a></li>
+                     <li><a href="/filter_raw_data/ST102">ST102</a></li>
+                     <li><a href="/filter_raw_data/ST105">ST105</a></li>
+                     </ul>
+                    </li>
+                    <li class="dropdown">
+                      <a href="#" class="btn btn-link dropdown-toggle" 
+                        data-toggle="dropdown">
+                        <i class="icon-history position-left"></i> 
+                        Time Range <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu">
+                        <li><a href="/filter_raw_data_time/1">
+                          Last 1 m</a></li>
+                        <li><a href="/filter_raw_data_time/2">
+                          Last 15 m</a></li>
+                        <li><a href="/filter_raw_data_time/3">
+                          Last 1 hr</a></li>
+                        <li><a href="/filter_raw_data_time/4">
+                          Last 6 hrs</a></li>
+                        <li><a href="/filter_raw_data_time/5">
+                          Last 12 hrs</a></li>
+                        <li><a href="/filter_raw_data_time/6">
+                          Last 24 hrs</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="content">
+          <h4><i class="icon-stack position-left"></i> 
+            <span class="text-semibold">Raw Pollutants Data</span></h4>
+          <div class="panel panel-flat">
+            <div class="panel-heading">
+              <div class="heading-elements">
+                <ul class="icons-list">
+                  <li><a data-action="collapse"></a></li>
+                  <li><a data-action="reload"></a></li>
+                  <li><a data-action="close"></a></li>
+                </ul>
+              </div>
+            </div>
+            <table class="table datatable-basic">
+              <thead>
+                <tr>
+                  <th>Station ID</th>
+                  <th>Timestamp</th>
+                  <th>Latitude</th>
+                  <th>Longitude</th>
+                  <th>PM2.5</th>
+                  <th>PM10</th>
+                  <th>CO</th>
+                  <th>SO2</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in items %}
+                <tr>
+                  <td>{{item.stationID}}</td>
+                  <td>{{item.timestamp}}</td>
+                  <td>{{item.data.latitude}}</td>
+                  <td>{{item.data.longitude}}</td>
+                  <td>{{item.data.pm2_5}}</td>
+                  <td>{{item.data.pm10}}</td>
+                  <td>{{item.data.co}}</td>
+                  <td>{{item.data.so2}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+$ python mr3.py ratings.csv --movies=movies.csv
+
+#Outout
+329	"Forrest Gump (1994)"
+317	"\"Shawshank Redemption"
+307	"Pulp Fiction (1994)"
+279	"\"Silence of the Lambs"
+278	"\"Matrix"
+251	"Star Wars: Episode IV - A New Hope (1977)"
+238	"Jurassic Park (1993)"
+237	"Braveheart (1995)"
+224	"Terminator 2: Judgment Day (1991)"
+220	"Schindler's List (1993)"
+

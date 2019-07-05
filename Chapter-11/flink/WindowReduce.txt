@@ -1,0 +1,9 @@
+#Window Reduce (PythonWindowedStream -> PythonDataStream)
+class Sum(ReduceFunction):
+    def reduce(self, input1, input2):
+        count1, value1 = input1
+        count2, value2 = input2
+        return (count1 + count2, value1)
+
+windowedStream.reduce(Sum())
+    

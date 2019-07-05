@@ -1,0 +1,36 @@
+#Install collectd
+$sudo apt-get install collectd
+
+#Configure collectd
+$vim /etc/collectd.conf
+
+#Add the following configuration settings 
+#to the collectd.conf file:
+-----------------------------------------
+Hostname "master"
+Interval  10
+ReadThreads 5
+LoadPlugin syslog
+<Plugin syslog>
+  LogLevel info
+</Plugin>
+LoadPlugin csv
+<Plugin csv>
+  DataDir "/var/lib/collectd/csv"
+  StoreRates true
+</Plugin>
+LoadPlugin cpu
+LoadPlugin df
+LoadPlugin disk
+LoadPlugin load
+LoadPlugin memory
+LoadPlugin swap
+LoadPlugin users
+LoadPlugin interface
+<Plugin interface>
+  Interface "eth0"
+</Plugin>
+Include "/etc/collectd.d/*.conf"
+-----------------------------------------
+#Restart collectd
+$/etc/init.d/collectd restart 

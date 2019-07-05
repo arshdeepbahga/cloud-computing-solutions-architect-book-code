@@ -1,0 +1,44 @@
+/*------------------------------------------------------------------
+    [Swiper Arrows]
+------------------------------------------------------------------*/
+
+.swiper-button-prev,
+.swiper-button-next {
+	@include position(absolute, $top: 50%, $left: inherit, $right: inherit);
+	@include size(60px);
+	display: inline-block;
+	color: $color-white;
+	text-align: center;
+	vertical-align: middle;
+	background-image: none;
+	@include bg-opacity($color-dark, .7);
+	background-size: inherit;
+	background-position: inherit;
+	background-repeat: inherit;
+	padding: 4px;
+	margin-top: -20px;
+
+	&:before {
+		@include font($size: $font-size-36, $family: $font-family-font-awesome);
+	}
+
+	&:hover {
+		@include bg-opacity($color-dark, 1);
+	}
+}
+
+.swiper-button-prev {
+	left: 10px;
+
+	&:before {
+		content: "\f104";
+	}
+}
+
+.swiper-button-next {
+	right: 10px;
+
+	&:before {
+		content: "\f105";
+	}
+}

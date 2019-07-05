@@ -1,0 +1,11 @@
+#Install RESTMQ
+sudo apt-get install build-essential curl python-pip redis-server 
+     libffi-dev python-dev -y libssl-dev python-setuptools
+git clone https://github.com/gleicon/restmq.git
+cd restmq
+sudo pip install -r requirements.txt 
+sudo python setup.py install 
+# Start RESTMQ
+cd restmq/start_scripts
+touch acl.conf
+bash restmq_server --acl=acl.conf --listen=0.0.0.0 \&

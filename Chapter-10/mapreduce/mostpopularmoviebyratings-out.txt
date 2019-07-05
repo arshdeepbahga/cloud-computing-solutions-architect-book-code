@@ -1,0 +1,14 @@
+$ python mr6.py ratings.csv --movies=movies.csv
+
+#Output
+[1404.0, 317, 4.429022082018927]	"\"Shawshank Redemption"
+[1370.0, 329, 4.164133738601824]	"Forrest Gump (1994)"
+[1288.5, 307, 4.197068403908795]	"Pulp Fiction (1994)"
+[1165.5, 278, 4.192446043165468]	"\"Matrix"
+[1161.0, 279, 4.161290322580645]	"\"Silence of the Lambs"
+[1062.0, 251, 4.231075697211155]	"Star Wars: Episode IV - A New Hope"
+[955.5, 237, 4.031645569620253]	"Braveheart (1995)"
+[931.5, 218, 4.272935779816514]	"Fight Club (1999)"
+[929.5, 220, 4.225]	"Schindler's List (1993)"
+[892.5, 238, 3.75]	"Jurassic Park (1993)"
+

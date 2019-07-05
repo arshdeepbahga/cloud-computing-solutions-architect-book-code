@@ -1,0 +1,32 @@
+'''
+MIT License
+
+Copyright (c) 2019 Arshdeep Bahga and Vijay Madisetti
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+'''
+
+
+#Expted output: (year, bigram, count)
+data = LOAD 'hdfs:///ngraminput' using PigStorage() AS (ngram:chararray, year:int,count:int);
+yearData = GROUP data BY year;
+maxYearData = FOREACH yearData GENERATE group AS groupId, MAX(data.count) AS maxCount;
+joinResult = JOIN maxYearData BY (groupId,maxCount), data by (year,count);
+result = FOREACH joinResult GENERATE  $0 AS year, $1 AS count, $2 AS ngram;
+STORE result into 'hdfs:///result';

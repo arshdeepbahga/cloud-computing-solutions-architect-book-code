@@ -1,0 +1,6 @@
+#Filter (PythonDataStream -> PythonDataStream)
+class FilterPositives(FilterFunction):
+    def filter(self, value):
+        return value > 0
+
+dataStream.filter(FilterPositives())

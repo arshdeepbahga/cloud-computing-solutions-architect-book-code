@@ -1,0 +1,19 @@
+#Testing locally
+$cat data.txt | python mapper.py | python reducer.py
+
+#Running on Hadoop cluster
+#Copy data file to HDFS
+sudo -u user1 bin/hadoop dfs -copyFromLocal 
+data.txt input
+
+#Run MapReduce job
+bin/hadoop jar 
+contrib/streaming/hadoop-*streaming*.jar  
+-mapper mapper.py -reducer reducer.py  
+-file /home/ubuntu/hadoop/mapper.py  
+-file /home/ubuntu/hadoop/reducer.py  
+-input input/* -output output 
+
+#View output
+bin/hadoop dfs -ls output
+bin/hadoop dfs -cat output/part-00000

@@ -1,0 +1,19 @@
+#Iterate (PythonDataStream -> PythonIterativeStream -> 
+                                                PythonDataStream)
+class MapDoSomething(MapFunction):
+    def map(self, value):
+        return value - 1
+
+class FilterPositive(FilterFunction):
+    def filter(self, value):
+        return value > 0
+
+class FilterLessThanEqualToZero(FilterFunction):
+    def filter(self, value):
+        return value <= 0
+
+iteration = initial_stream.iterate(5000)
+iteration_body = iteration.map(MapDoSomething())
+feedback = iteration_body.filter(FilterPositive())
+iteration.close_with(feedback)
+output = iteration_body.filter(FilterLessThanEqualToZero())

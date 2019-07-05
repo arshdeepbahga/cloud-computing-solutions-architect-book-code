@@ -1,0 +1,29 @@
+myagent.sources = r1 
+myagent.channels = c1 
+myagent.sinks = k1 
+ 
+# Define source 
+myagent.sources.r1.type = org.apache.flume.source.twitter.TwitterSource 
+myagent.sources.r1.consumerKey = <enter key here> 
+myagent.sources.r1.consumerSecret = <enter secret here> 
+myagent.sources.r1.accessToken = <enter token here> 
+myagent.sources.r1.accessTokenSecret = <enter token secret here> 
+myagent.sources.r1.maxBatchSize = 10 
+myagent.sources.r1.maxBatchDurationMillis = 200 
+ 
+#Define sink 
+myagent.sinks.k1.type = hdfs 
+myagent.sinks.k1.hdfs.fileType = DataStream 
+myagent.sinks.k1.hdfs.path = /flume/events 
+myagent.sinks.k1.hdfs.filePrefix = eventlog 
+myagent.sinks.k1.hdfs.fileSuffix = .log 
+myagent.sinks.k1.hdfs.batchSize = 1000 
+ 
+#Define Channel 
+myagent.channels.c1.type = file 
+myagent.channels.c1.checkpointDir = /var/flume/checkpoint 
+myagent.channels.c1.dataDirs = /var/flume/data 
+ 
+# Bind the source and sink to the channel 
+myagent.sources.r1.channels = c1 
+myagent.sinks.k1.channel = c1

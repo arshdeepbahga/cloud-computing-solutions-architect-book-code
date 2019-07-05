@@ -1,0 +1,43 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Cloud Drive</title>
+<link href="/static/styles/demo_style.css" rel="stylesheet" type="text/css">
+<link href="/static/styles/bootstrap.css" rel="stylesheet" type="text/css">
+
+</head><body>
+
+<div class="demoHead">   
+  <div>
+    <div style="float:left;">
+      <h1>Cloud Drive</h1>
+      <h2>a cloud-based app for document storage</h2>
+    </div>
+  
+    <div style="clear:both;"></div>
+  </div>
+
+ 
+
+</div>
+<br><br><br><br>
+<center>
+<table width="40%" align="center" border="0">
+<tr>
+<td>
+<h3>Register</h3>
+</center>
+ <form action="" method="post">{% csrf_token %}
+      {{ form.as_p }}
+      <input type="submit" value="Create the account">
+  </form>
+</td>
+</tr>
+</table>
+<br><br>
+<center>
+<a href='/'>Home</a>
+</center>
+
+</body>
+</html>

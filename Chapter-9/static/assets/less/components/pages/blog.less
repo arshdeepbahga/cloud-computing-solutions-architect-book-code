@@ -1,0 +1,145 @@
+/* ------------------------------------------------------------------------------
+ *
+ *  # Blog layouts
+ *
+ *  Blog layouts with various blog layouts
+ *
+ *  Version: 1.0
+ *  Latest update: Aug 1, 2016
+ *
+ * ---------------------------------------------------------------------------- */
+
+
+//
+// Common styles for all layouts
+//
+
+.blog-horizontal {
+
+    // Remove bottom padding from panel body
+    > .panel-body {
+        padding-bottom: 0;
+    }
+
+    // Make all title link color same as text color
+    .blog-title {
+        > a {
+            color: @text-color;
+        }
+
+        > .list-inline {
+            margin-top: 3px;
+        }
+    }
+
+    // Stick thumb to the left and give it fixed width
+    .thumb {
+        width: 100%;
+
+        @media (min-width: @screen-sm-min) {
+            width: 45%;
+            float: left;
+            margin-right: @content-padding-large;
+            max-width: 400px;
+        }
+    }
+}
+
+
+//
+// Layouts setup
+//
+
+// Layout #1
+.blog-horizontal-1 {
+    .thumb {
+        margin-bottom: @content-padding-large;
+    }
+
+    .blog-preview {
+        margin-bottom: (@content-padding-large / 2);
+    }
+
+    .panel-footer-transparent {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    @media (min-width: @screen-sm-min) {
+        .thumb {
+            margin-bottom: (@line-height-computed / 2);
+        }
+    }
+}
+
+// Layout #2
+.blog-horizontal-2 {
+    .thumb {
+        margin-bottom: @content-padding-large;
+    }
+
+    .blog-title {
+        margin-top: 5px;
+        margin-bottom: 15px;
+    }
+
+    .blog-preview {
+        margin-bottom: @content-padding-large;
+    }
+}
+
+
+// Layout #3
+.blog-horizontal-3 {
+    .thumb,
+    .blog-preview {
+        margin-bottom: @content-padding-large;
+    }
+
+    .blog-title {
+        margin-top: 2px;
+        margin-bottom: 0;
+    }
+
+    .blog-preview .list-inline {
+        &,
+        > li > a {
+            color: @text-muted;
+        }
+    }
+}
+
+
+//
+// Media sizing
+//
+
+// Mini
+.blog-horizontal-xs {
+    .thumb {
+        @media (min-width: @screen-sm-min) {
+            width: 35%;
+            max-width: 200px;
+        }
+    }
+}
+
+// Medium
+.blog-horizontal-sm {
+    .thumb {
+        @media (min-width: @screen-sm-min) {
+            width: 40%;
+            max-width: 300px;
+        }
+    }
+}
+
+// Large
+.blog-horizontal-lg {
+    .thumb {
+        @media (min-width: @screen-sm-min) {
+            width: 50%;
+            max-width: 500px;
+        }
+    }
+}

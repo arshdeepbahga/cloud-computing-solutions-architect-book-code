@@ -1,0 +1,13 @@
+$ python mr8.py ratings.csv --movies=movies.csv --tags=tags.csv
+
+#Output
+171	"Back to the Future (1985)"
+140	"Stargate (1994)"
+87	"Back to the Future Part II (1989)"
+59	"Star Trek (2009)"
+46	"The Butterfly Effect (2004)"
+45	"Bill & Ted's Excellent Adventure (1989)"
+41	"Time Bandits (1981)"
+20	"Bill & Ted's Bogus Journey (1991)"
+17	"Primer (2004)"
+

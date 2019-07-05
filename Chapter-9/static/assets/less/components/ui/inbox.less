@@ -1,0 +1,221 @@
+/* ------------------------------------------------------------------------------
+*
+*  # Mail list
+*
+*  Inbox page - list, read and write
+*
+*  Version: 1.0
+*  Latest update: Dev 5, 2016
+*
+* ---------------------------------------------------------------------------- */
+
+
+// Inbox table
+// ------------------------------
+
+.table-inbox {
+    table-layout: fixed;
+
+    // Rows and cells
+    tr {
+        td {
+            cursor: pointer;
+            background-color: #fafafa;
+
+            // Remove left padding in all cells except first
+            &:not(:first-child) {
+                padding-left: 0;
+            }
+        }
+
+        // New mail
+        &.unread {
+            font-weight: 700;
+
+            // Change background color to white
+            td {
+                background-color: #fff;
+            }
+        }
+    }
+
+    // Cell with checkbox
+    .table-inbox-checkbox {
+        width: ((@content-padding-large * 2) + @checkbox-size);
+    }
+
+    // Set fixed width to star and atachment cells
+    .table-inbox-star,
+    .table-inbox-attachment {
+        width: (@content-padding-large + @icon-font-size);
+    }
+
+    // User image cell
+    .table-inbox-image {
+        width: (@content-padding-large + (((@line-height-computed - @icon-font-size + @padding-xs-vertical) - 1) * 2) + @icon-font-size);
+    }
+
+    // Sender name
+    .table-inbox-name {
+        width: 180px;
+        &:extend(.table-inbox .table-inbox-message);
+    }
+
+    // Message
+    .table-inbox-message {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    // Message preview
+    .table-inbox-preview {
+        font-weight: normal;
+        color: @text-muted;
+    }
+
+    // Time cell
+    .table-inbox-time {
+        text-align: right;
+        width: 80px;
+    }
+
+
+    // Mobile view
+    @media (max-width: @grid-float-breakpoint-max) {
+        min-width: @screen-xs;
+
+        // Allow text to wrap
+        .table-inbox-message {
+            white-space: normal;
+        }
+
+        // Message subject
+        .table-inbox-subject {
+            display: block;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        // Hide star, attachment and image cells
+        .table-inbox-star,
+        .table-inbox-attachment,
+        .table-inbox-image {
+            display: none;
+        }
+    }
+}
+
+
+// Layout parts
+// ------------------------------
+
+//
+// Details
+//
+
+// Read
+.mail-details-read {
+    margin: 0;
+    padding: @panel-body-padding;
+    border-top: 1px solid @panel-inner-border;
+}
+
+// Write
+.mail-details-write {
+    margin: 0;
+    border-top: 1px solid @panel-inner-border;
+
+    // Padding fr label
+    .control-label {
+        padding: @content-padding-small @content-padding-large;
+    }
+
+    // Input style
+    .form-control {
+        border-width: 0;
+        padding: @content-padding-small @content-padding-large;
+        border-radius: 0;
+        height: auto;
+    }
+}
+
+
+//
+// Container
+//
+
+// Read
+.mail-container-read {
+    max-width: 100%;
+    overflow: auto;
+    padding: @panel-body-padding;
+    border-top: 1px solid @panel-inner-border;
+}
+
+// Write
+.mail-container-write {
+    border-top: 1px solid @panel-inner-border;
+
+    // Summernote editor container
+    .note-editor {
+        border-width: 0;
+        border-radius: 0;
+        margin-bottom: 0;
+    }
+}
+
+
+//
+// Attachments
+//
+
+// Container
+.mail-attachments-container {
+    padding: @content-padding-large;
+    padding-top: (@content-padding-large / 2);
+    border-top: 1px solid @panel-inner-border;
+}
+
+// Heading
+.mail-attachments-heading {
+    margin-top: (@content-padding-large / 2);
+    margin-bottom: (@content-padding-large / 2);
+}
+
+// Attachments list
+.mail-attachments {
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+    list-style: none;
+
+    // List item
+    > li {
+        display: inline-block;
+        font-size: @font-size-base;
+        padding: @content-padding-base @content-padding-large;
+        background-color: #fcfcfc;
+        border: 1px solid @panel-inner-border;
+        border-radius: @border-radius-base;
+        margin-top: (@content-padding-large / 2);
+        margin-right: (@content-padding-large / 2);
+    }
+
+    // Preview icon
+    .mail-attachments-preview {
+        display: inline-block;
+        float: left;
+
+        // Icon
+        > i {
+            top: 0;
+            margin-top: 4px;
+        }
+    }
+
+    // Item content
+    .mail-attachments-content {
+        margin-left: (@icon-font-size * 2) + @content-padding-base;
+    }
+}

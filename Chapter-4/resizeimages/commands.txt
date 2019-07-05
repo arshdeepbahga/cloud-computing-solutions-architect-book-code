@@ -1,0 +1,6 @@
+cd ~/
+mkdir imgresize
+cd imgresize
+pip install pillow -t /home/ubuntu/imgresize/
+pip install python-resize-image -t /home/ubuntu/imgresize/
+pip install boto3 -t /home/ubuntu/imgresize/

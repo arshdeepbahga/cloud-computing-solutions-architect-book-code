@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<!-- HEAD -->
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Photo Gallery</title>
+<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href='https://fonts.googleapis.com/css?family=Roboto:100,400,700,500,300,300italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href="assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/et-line/et-line.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/themify/themify.css" rel="stylesheet" type="text/css"/>
+<link href="assets/plugins/cubeportfolio/css/cubeportfolio.min.css" rel="stylesheet" type="text/css"/>
+<link href="assets/css/global.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="assets/plugins/jquery.min.js"></script>
+
+</head>
+<!-- END HEAD -->
+<!-- BEGIN BODY -->
+<body>
+
+<!-- WRAPPER -->
+<div class="wrapper">
+    
+    
+    <!--========== BACKGROUND COLOR SKY LIGHT ==========-->
+    <div class="bg-color-sky-light">
+        <br>
+    <center><h2>Photo Gallery</h2>
+    <br>
+    Logged in as {{userdata}}<br><br>
+    <a href="/">Home</a> | <a href="/add">Add Photo</a> | <a href="/logout">Logout</a>
+    <br><br>
+    <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                        <div class="blog-grid-content">
+<form  method='get' action="/search">
+                            <input type="text" name="query" id="query" class="form-control" placeholder="Search photos">
+                        </div>
+                </div>
+                
+
+               
+            </div>
+        </div>
+    </center>
+        <!--========== PAGE CONTENT ==========-->
+        <div class="content-sm container">
+            <div class="row">
+                <div class="col-md-9 md-margin-b-50">
+                    <!-- Blog Grid -->
+                    <article class="blog-grid margin-b-30">
+                        <!-- Image -->
+                        <img class="img-responsive" src="{{photo.URL}}" alt="">
+                        <!-- End Image -->
+
+                        <!-- Blog Grid Content -->
+                        <div class="blog-grid-content">
+                            <h2 class="blog-grid-title-lg"><a class="blog-grid-title-link" href="#">{{photo.Title}}</a></h2>
+                             <p>By: {{photo.Username}}</p>
+                            <p>Uploaded: {{photo.CreationTime}}</p>
+
+                            <p>{{photo.Description}}</p>
+
+                            
+                        </div>
+                        <!-- End Blog Grid Content -->
+                    </article>
+                    <!-- End Blog Grid -->
+
+                    
+                </div>
+
+                <!--========== BLOG SIDEBAR ==========-->
+                <div class="col-md-3">
+                    
+
+                    <!-- Blog Sidebar -->
+                    <div class="blog-sidebar">
+                        <div class="blog-sidebar-heading">
+                            <i class="blog-sidebar-heading-icon icon-paperclip"></i>
+                            <h4 class="blog-sidebar-heading-title">Tags</h4>
+                        </div>
+                        <div class="blog-sidebar-content">
+                            <!-- Blog Grid Tags -->
+                            <ul class="list-inline blog-sidebar-tags">
+                            {% for t in tags %}
+                                <li><a class="radius-50" href="#">{{t}}</a></li>
+                                {% endfor %}
+                            </ul>
+                            <!-- End Blog Grid Tags -->
+                        </div>
+                    </div>
+                    <br>
+                    <div class="blog-sidebar">
+                        <div class="blog-sidebar-heading">
+                            <i class="blog-sidebar-heading-icon icon-paperclip"></i>
+                            <h4 class="blog-sidebar-heading-title">EXIF Data</h4>
+                        </div>
+                        <div class="blog-sidebar-content">
+                            <!-- Blog Grid Tags -->
+                            <ul class="list-inline blog-sidebar-tags">
+                            {% for key, value in exifdata.items() %}
+                                <li>{{key}}: {{value}}</li>
+                                {% endfor %}
+                            </ul>
+                            <!-- End Blog Grid Tags -->
+                        </div>
+                    </div>
+                    <!-- End Blog Sidebar -->
+                </div>
+                <!--========== END BLOG SIDEBAR ==========-->
+            </div>
+            <!--// end row -->
+        </div>
+        <!--========== END PAGE CONTENT ==========-->
+
+    </div>
+    <!--========== END BACKGROUND COLOR SKY LIGHT ==========-->
+    
+    
+</div>
+<!-- END WRAPPER -->
+
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+<script type="text/javascript" src="assets/scripts/app.js"></script>
+<script type="text/javascript" src="assets/scripts/portfolio/portfolio-4-col-grid.js"></script>
+</body>
+<!-- END BODY -->
+
+</html>

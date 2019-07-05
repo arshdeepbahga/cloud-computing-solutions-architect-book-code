@@ -1,0 +1,26 @@
+#Install CloudWatch agent
+wget https://s3.amazonaws.com/amazoncloudwatch-agent/ubuntu/\
+amd64/latest/amazon-cloudwatch-agent.deb
+
+sudo dpkg -i amazon-cloudwatch-agent.deb 
+
+#Run setup wizard of CloudWatch agent
+sudo /opt/aws/amazon-cloudwatch-agent/bin/\
+amazon-cloudwatch-agent-config-wizard
+
+#Install collectd
+sudo apt install collectd
+sudo vim /etc/collectd/collectd.conf
+sudo service collectd restart
+
+#Start the CloudWatch Agent using saved the configuration file 
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \
+-a fetch-config -m ec2 -c \
+file:/opt/aws/amazon-cloudwatch-agent/bin/config.json -s
+
+#OR
+
+#Start the CloudWatch Agent using agent configuration file 
+#in Systems Manager Parameter Store
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl \
+-a fetch-config -m ec2 -c ssm:AmazonCloudWatch-linux -s

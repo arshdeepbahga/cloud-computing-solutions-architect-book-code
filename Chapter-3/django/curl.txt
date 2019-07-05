@@ -1,0 +1,107 @@
+#--------POST Example-----------  
+  
+$curl -i -H "Content-Type: application/json" -H "Accept: application/json; indent=4" 
+-X POST -d '{"name":"Cloud Computing","isbn":"989-1-9881818","pub_date":"2013-12-04", 
+"pub_name":"XYZ Publishers"}' -u arshdeep http://127.0.0.1:8000/books/  
+  
+HTTP/1.0 201 CREATED  
+Server: WSGIServer/0.1 Python/2.7.3  
+Vary: Accept, Cookie  
+X-Frame-Options: SAMEORIGIN  
+Content-Type: application/json; indent=4  
+Location: http://127.0.0.1:8000/books/1/  
+Allow: GET, POST, HEAD, OPTIONS  
+  
+{  
+	"url": "http://127.0.0.1:8000/books/1/",   
+	"name": "Cloud Computing",   
+	"isbn": "989-1-9881818",   
+	"pub_date": "2013-12-04",   
+	"pub_name": "XYZ Publishers"  
+}  
+  
+#--------GET Examples-----------  
+  
+$curl -i -H "Accept: application/json; indent=4" -u arshdeep  http://127.0.0.1:8000/books/  
+  
+HTTP/1.0 200 OK  
+Server: WSGIServer/0.1 Python/2.7.3  
+Vary: Accept, Cookie  
+X-Frame-Options: SAMEORIGIN  
+Content-Type: application/json; indent=4  
+Allow: GET, POST, HEAD, OPTIONS  
+  
+{  
+	"count": 2,   
+	"next": null,   
+	"previous": null,   
+	"results": [  
+		{  
+			"url": "http://127.0.0.1:8000/books/1/",   
+			"name": "Cloud Computing",   
+			"isbn": "989-1-9881818",   
+			"pub_date": "2013-12-04",   
+			"pub_name": "XYZ Publishers"  
+		},   
+		{  
+			"url": "http://127.0.0.1:8000/books/2/",   
+			"name": "Database Systems",   
+			"isbn": "981-3-8128989",   
+			"pub_date": "2013-02-14",   
+			"pub_name": "ABC Publishers"  
+		}  
+	]  
+}  
+  
+$curl -i -H "Accept: application/json; indent=4" -u arshdeep  http://127.0.0.1:8000/books/1/  
+  
+HTTP/1.0 200 OK  
+Server: WSGIServer/0.1 Python/2.7.3  
+Vary: Accept, Cookie  
+X-Frame-Options: SAMEORIGIN  
+Content-Type: application/json; indent=4  
+Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS  
+  
+{  
+	"url": "http://127.0.0.1:8000/books/1/",   
+	"name": "Cloud Computing",   
+	"isbn": "989-1-9881818",   
+	"pub_date": "2013-12-04",   
+	"pub_name": "XYZ Publishers"  
+}  
+  
+#--------PUT Example-----------  
+  
+$curl -i -H "Content-Type: application/json" -H "Accep: application/json; indent=4" 
+-X PUT -d '{"name":"Cloud Computing: Concepts \& Technologies", "isbn":"989-1-9881818",
+"pub_date":"2013-12-04","pub_name":"XYZ Pub"}' 
+-u arshdeep http://127.0.0.1:8000/books/1/  
+  
+HTTP/1.0 200 OK  
+Server: WSGIServer/0.1 Python/2.7.3  
+Vary: Accept, Cookie  
+X-Frame-Options: SAMEORIGIN  
+Content-Type: application/json; indent=4  
+Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS  
+  
+{  
+	"url": "http://127.0.0.1:8000/books/1/",   
+	"name": "Cloud Computing: Concepts \& Technologies",   
+	"isbn": "989-1-9881818",   
+	"pub_date": "2013-12-04",   
+	"pub_name": "XYZ Publishers"  
+}  
+  
+#--------DELETE Example-----------  
+  
+$curl -i -X DELETE -H "Accept: application/json; indent=4" 
+-u arshdeep  http://127.0.0.1:8000/books/2/  
+  
+HTTP/1.0 204 NO CONTENT  
+Server: WSGIServer/0.1 Python/2.7.3  
+Vary: Accept, Cookie  
+X-Frame-Options: SAMEORIGIN  
+Content-Type: application/json; indent=4  
+Content-Length: 0  
+Allow: GET, PUT, PATCH, DELETE, HEAD, OPTIONS  
+
