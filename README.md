@@ -7,5 +7,5 @@ This repository contains full source code for the examples in the book Cloud Com
 
 ### Contents
 <p align="center">
-  <img src="http://www.hands-on-books-series.com/assets/img/TOC-CCSA.png" width="600"/>
+  <img src="http://www.hands-on-books-series.com/assets/img/TOC-CCSA.png" width="800"/>
 </p>
